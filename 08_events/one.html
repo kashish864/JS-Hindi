@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>html Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Amazing image</h2>
+    <div>
+        <ul id="images">
+        <li><img width="200px" id="photoshop" src="image1.jpg" alt="photoshop"></li>
+        <li><img width="200px" id="japan" src="image2.jpg" alt=""></li>
+        <li><img width="200px" id="river" src="image3.jpg" alt=""></li>
+        <li><img width="200px" id="owl" src="image4.jpg" alt="" ></li>
+        <!-- Like in upper statement., do less use of this approach (onclick)  -->
+        <li><img width="200px" id="prayer" src="image5.jpg" alt=""></li>
+        <li><a style="color: aliceblue;" id="Google">Google</a></li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    // //In javascript all the events run sequentially. There are some exceptions but javascript is a sequentially run language.
+    // // document.getElementById('owl').onclick = function(){ //Onclick gives less features so we use another approach.
+    // //      alert("owl clicked")
+    // // }
+    // //These were used in early time :-
+    //       //attachEvent()
+    //       //jQuery - on
+
+    // //type, timestamp, defaultPrevented
+    // //target, toElement, srcElement, currentTarget,
+    // //clientX, clientY, screenX, screenY
+    // //altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+    // }, false)
+    // //There are two context of event propagation:-
+    //         //i) Event bubbling
+    //         //ii) Event capturing
+    // //In markets, mostly used is default which is false (event bubbling). But in some scenarios, we have
+    // //to use event capturing.
+
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("owl clicked");
+    //     e.stopPropagation()
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation()
+    //     console.log("google clicked");   
+    // }, false)
+
+    document.querySelector('images').addEventListener('click', function(e){
+        console.log(e);
+    })
+
+</script>
+</html> 

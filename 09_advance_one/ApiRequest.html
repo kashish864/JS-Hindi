@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style="background-color: #212121;">
+0	UNSENT	Client has been created. open() not called yet.
+1	OPENED	open() has been called.
+2	HEADERS_RECEIVED	send() has been called, and headers and status are available.
+3	LOADING	Downloading; responseText holds partial data.
+4	DONE	The operation is complete. 
+</body>
+<script>
+    const requestURL = 'https://api.github.com/users'
+    const xhr = new XMLHttpRequest() /**This is itself a method in which there is ready state and all and through this you can
+    send your data request and recieve it. This method is mostly used. You can say that it is like a class so you have 
+    to make an object. To make an object you have to use new keyword **/  
+    xhr.open('GET', requestURL) /**Open actually sends the request. This open only available when you make request type on XMLHttp.
+    In open(), there are two parameters first one is method and second one is string. Method means which type of request
+    you want to send like get 
+
+    open does not call itself you have to call it. When you send then actually it calls. The status codes change 
+    continuously **/
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState);
+        //if we want to detect our state ..
+        if (xhr.readyState === 4) {
+            const data = JSON.parse(this.responseText) //parse converts string into JSON
+            console.log(data)
+            const obj_data = data[1]
+            console.log(obj_data.id)
+            /** console.log(data.followers);ye pta krne k lie ki iss particular function k ander hee chie mujhe ye 
+            then i have to write this.responseText.. When we talk about current context then we have to write 
+            this **/
+            
+        }
+    }
+    
+    xhr.send()
+    
+</script>
+</html>

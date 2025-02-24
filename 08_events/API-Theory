@@ -1,0 +1,2 @@
+API is a talking language between two systems. These two systems may be backend or frontend, our backend or frontend, some other person's backend or our frontend, some other person's backend or frontend. May be your two systems wants to talk with each other, one is written in java another one is written in javascript, one is written in ruby another one is written in PHP.
+So, the medium to talk between them is API. 
